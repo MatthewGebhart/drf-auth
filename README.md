@@ -1,5 +1,5 @@
-# LAB - Class 32
-## Project: Django REST Permissions & Postgresql
+# LAB - Class 33
+## Project: Django REST Authentication & Production Server
 ## Author: Matthew Gebhart
 
 ## Setup
@@ -8,10 +8,11 @@ Deployed to a Docker container
 
 ## How to initialize/run your application
 - local server 
-- python manage.py runserver
+- docker compose up
 ## Tests
-tests are run with $ python manage.py test
-- Tests for url status code 200 for all pages
-- Tests to confirm model
-- tests to confirm API calls
-- tests to check for create, Read, Update, Delete
+- testing for the "get tokens" component is done in Thunder Client as outlined below:
+  - test url is http://0.0.0.0:8000/api/token/
+  - method is POST
+  - adding my test account credentials to the JSON to the Body of the request
+    - {"username":"my_username", "password":"my_password"
+  - Returns with Status: 200 OK and the tokens for both "refresh": and "access":
